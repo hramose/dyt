@@ -42,7 +42,7 @@
                     <div class="form-group">
                         <div class="col-lg-10 col-lg-offset-2">
                              <a class="btn btn-danger"   href="{!! action('Admin\SedesController@index') !!}">cancelar</a>
-                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <button type="submit" class="btn btn-primary">Confirmar Edición</button>
                         </div>
                     </div>
                 </fieldset>
