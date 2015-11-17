@@ -40,13 +40,27 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="select" class="col-lg-2 control-label">Role</label>
+                        <label for="select" class="col-lg-2 control-label">Rol</label>
 
                         <div class="col-lg-10">
                             <select class="form-control" id="role" name="role[]" multiple>
                                 @foreach($roles as $role)
                                     <option value="{!! $role->id !!}"  @if(in_array($role->id, $selectedRoles))
                                             selected="selected" @endif >{!! $role->display_name !!}
+                                    </option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="select" class="col-lg-2 control-label">Sedes</label>
+
+                        <div class="col-lg-10">
+                            <select class="form-control" id="role" name="role[]" multiple>
+                                @foreach($sedes as $sede)
+                                    <option value="{!! $sede->id !!}"  @if(in_array($sede->id, $selectedSedes))
+                                            selected="selected" @endif >{!! $sede->display_name !!}
                                     </option>
                                 @endforeach
                             </select>

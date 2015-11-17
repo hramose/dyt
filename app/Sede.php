@@ -11,4 +11,10 @@ class Sede extends Model
     			'nombre',
     			'telefonos',
     		];
+
+    public function users()
+    {
+    	return $this->hasMany('App\User');
+    }
 }
+

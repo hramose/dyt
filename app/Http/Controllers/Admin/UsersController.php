@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Hash; //incluido para utilizar hash sobre la pass
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Role;
+use App\Sede;
 
 class UsersController extends Controller
 {
@@ -69,8 +70,11 @@ class UsersController extends Controller
         //Asignar roles a usuario
         $user = User::whereId($id)->firstOrFail();
         $roles = Role::all();
+        $sedes = Sede::all();
         $selectedRoles = $user->roles->lists('id')->toArray();
-        return view('backend.users.edit', compact('user', 'roles', 'selectedRoles'));
+        $selectedSedes = $user->sedes->lists('id')->toArray();
+
+        return view('backend.users.edit', compact('user', 'roles','sedes', 'selectedRoles', 'selectedSedes'));
     }
 
     /**
