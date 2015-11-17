@@ -48,7 +48,7 @@ Route::post('users/login', 'Auth\AuthController@postLogin');
 
 //-----------------------Fin Autenticación-----------------------------
 
-Route::group(array('prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=> 'manager'), function(){
+Route::group(array('prefix'=>'admin', 'namespace'=>'Admin'/*, 'middleware'=> 'manager'*/), function(){
 	//Admin dashboard
 	Route::get('/', 'PagesController@home');
 	//ver usuarios
@@ -70,6 +70,14 @@ Route::group(array('prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=> 'mana
 	Route::get('categories', 'CategoriesController@index');
 	Route::get('categories/create', 'CategoriesController@create');
 	Route::post('categories/create', 'CategoriesController@store');
+	//Administrar sedes
+	Route::get('sedes', 'SedesController@index');
+	//Route::delete('sedes', 'SedesController@destroy');
+	Route::get('sedes/create', 'SedesController@create');
+	Route::post('sedes/create', 'SedesController@store');
+	Route::get('sedes/{id?}/edit', 'SedesController@edit');
+	Route::post('sedes/{id?}/edit', 'SedesController@update');
+	Route::post('sedes/{id?}/edit', 'SedesController@update');
 });
 
 Route::get('/blog', 'BlogController@index');
