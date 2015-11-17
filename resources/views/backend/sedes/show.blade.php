@@ -26,7 +26,7 @@
 
                         <div class="col-lg-10">
                             <input type="name" class="form-control" id="nombre" placeholder="Nombre" name="nombre"
-                                   value="{{ $sede->nombre }}">
+                                   value="{{ $sede->nombre }}" disabled>
                         </div>
                     </div>
 
@@ -35,14 +35,14 @@
 
                         <div class="col-lg-10">
                             <input type="phone" class="form-control" id="telefonos" placeholder="Telefono/s" name="telefonos"
-                                   value="{{ $sede->telefonos }}">
+                                   value="{{ $sede->telefonos }}" disabled>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <div class="col-lg-10 col-lg-offset-2">
-                             <a class="btn btn-danger"   href="{!! action('Admin\SedesController@index') !!}">cancelar</a>
-                            <button type="submit" class="btn btn-primary">Enviar</button>
+                            <a class="btn btn-danger"   href="{!! action('Admin\SedesController@index') !!}">cancelar</a>
+                           <a class="btn btn-danger"   href="{!! action('Admin\SedesController@destroy', $sede->id) !!}">Confirmar borrado</a>
                         </div>
                     </div>
                 </fieldset>

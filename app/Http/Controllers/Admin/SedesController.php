@@ -63,7 +63,8 @@ class SedesController extends Controller
      */
     public function show($id)
     {
-        //
+        $sede = Sede::whereId($id)->firstOrFail();
+        return view('backend.sedes.show', compact('sede'));
     }
 
     /**
@@ -107,6 +108,8 @@ class SedesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $sede = Sede::whereId($id)->firstOrFail();
+        $sede->delete();
+        return redirect(action('Admin\SedesController@index', $sede->id))->with('status', 'La sede fue eliminada!');
     }
 }

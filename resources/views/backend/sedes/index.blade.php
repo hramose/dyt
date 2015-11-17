@@ -20,6 +20,7 @@
                         <tr>
                             <th>Nombre</th>
                             <th>Teléfonos</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -29,6 +30,7 @@
                                 <a href="{!! action('Admin\SedesController@edit', $sede->id) !!}">{!! $sede->nombre !!} </a>
                             </td>
                             <td>{!! $sede->telefonos !!}</td>
+                            <td><a class="btn btn-danger btn-xs"   href="{!! action('Admin\SedesController@show', $sede->id) !!}">Eliminar</a></td>
                         </tr>
                     @endforeach
                     </tbody>
