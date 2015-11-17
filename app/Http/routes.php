@@ -48,7 +48,7 @@ Route::post('users/login', 'Auth\AuthController@postLogin');
 
 //-----------------------Fin Autenticación-----------------------------
 
-Route::group(array('prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=> 'manager'), function(){
+Route::group(array('prefix'=>'admin', 'namespace'=>'Admin', /*'middleware'=> 'manager'*/), function(){
 	//Admin dashboard
 	Route::get('/', 'PagesController@home');
 	//ver usuarios
@@ -79,7 +79,7 @@ Route::group(array('prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=> 'mana
 	Route::get('sedes/{id?}/show', 'SedesController@show');
 	Route::get('sedes/{id?}/delete', 'SedesController@destroy');
 	Route::post('sedes/{id?}/edit', 'SedesController@update');
-	Route::post('sedes/{id?}/edit', 'SedesController@update');
+	
 });
 
 Route::get('/blog', 'BlogController@index');

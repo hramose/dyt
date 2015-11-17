@@ -45,8 +45,18 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
         }
     }
 
+    public function saveSedes($sedes)
+    {
+        if(!empty($sedes))
+        {
+            $this->sedes()->sync($sedes);
+        } else {
+            $this->sedes()->detach();
+        }
+    }
+
     public function sedes()
     {
-        return $this->hasMany('App\Sede');
+        return $this->belongsToMany('App\Sede');
     }
 }

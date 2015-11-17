@@ -55,12 +55,12 @@
 
                     <div class="form-group">
                         <label for="select" class="col-lg-2 control-label">Sedes</label>
-
+            
                         <div class="col-lg-10">
-                            <select class="form-control" id="role" name="role[]" multiple>
+                            <select class="form-control" id="sede" name="sede[]" multiple>
                                 @foreach($sedes as $sede)
                                     <option value="{!! $sede->id !!}"  @if(in_array($sede->id, $selectedSedes))
-                                            selected="selected" @endif >{!! $sede->display_name !!}
+                                            selected="selected" @endif >{!! $sede->nombre !!}
                                     </option>
                                 @endforeach
                             </select>

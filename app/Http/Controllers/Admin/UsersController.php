@@ -96,6 +96,7 @@ class UsersController extends Controller
         }
         $user->save();
         $user->saveRoles($request->get('role'));
+        $user->saveSedes($request->get('sede'));
 
         return redirect(action('Admin\UsersController@edit', $user->id))->with('status', 'The user has been updated!');
     }
