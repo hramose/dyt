@@ -6,6 +6,7 @@
     <link href="/css/roboto.min.css" rel="stylesheet">
     <link href="/css/material.min.css" rel="stylesheet">
     <link href="/css/ripples.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.10/css/jquery.dataTables.min.css">
 </head>
 <body>
 
@@ -23,5 +24,11 @@
         $.material.init();
     });
 </script>
+<script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
 </body>
+<script>
+    $(document).ready(function(){
+    $('#myTable').DataTable();
+});
+</script>
 </html>

@@ -15,7 +15,7 @@
             @if ($roles->isEmpty())
                 <p> There is no role.</p>
             @else
-                <table class="table">
+                <table class="table" id="myTable">
                     <thead>
                     <tr>
                         <th>Name</th>

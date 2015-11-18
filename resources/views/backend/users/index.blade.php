@@ -15,7 +15,7 @@
             @if ($users->isEmpty())
                 <p> There is no user.</p>
             @else
-                <table class="table">
+                <table class="table" id="myTable">
                     <thead>
                     <tr>
                         <th>ID</th>

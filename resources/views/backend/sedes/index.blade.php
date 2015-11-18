@@ -15,7 +15,7 @@
             @if ($sedes->isEmpty())
                 <p> No hay sedes creadas.</p>
             @else
-                <table class="table">
+                <table class="table" id="myTable">
                     <thead>
                         <tr>
                             <th>Nombre</th>

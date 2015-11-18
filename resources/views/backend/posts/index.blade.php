@@ -15,7 +15,7 @@
             @if ($posts->isEmpty())
                 <p> There is no post.</p>
             @else
-                <table class="table">
+                <table class="table" id="myTable">
                     <thead>
                     <tr>
                         <th>ID</th>
