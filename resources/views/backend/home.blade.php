@@ -67,6 +67,20 @@
                         <a href="/admin/sedes/create" class="btn btn-primary btn-raised">Nueva Sede</a>
                     </div>
                 </div>
+
+
+                <div class="list-group-separator"></div>
+                <div class="list-group-item">
+                    <div class="row-action-primary">
+                        <i class="mdi-hospital-building"></i>
+                    </div>
+                    <div class="row-content">
+                        <div class="action-secondary"><i class="mdi-social-info"></i></div>
+                        <h4 class="list-group-item-heading">Administrar pacientes</h4>
+                        <a href="/admin/pacientes" class="btn btn-default btn-raised">Todas los Pacientes</a>
+                        <a href="/admin/pacientes/create" class="btn btn-primary btn-raised">Nuevo Paciente</a>
+                    </div>
+                </div>
             </div>
 
         </div>

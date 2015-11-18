@@ -41,5 +41,10 @@
             @endif
         </div>
     </div>
-
+<div class="form-group">
+        <div class="col-lg-10 col-lg-offset-2">
+            <a href="{!! action('Admin\PagesController@home') !!}" class="btn btn-primary"> <- Volver al hub de admin</a>
+            
+        </div>
+    </div>
 @endsection

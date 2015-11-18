@@ -79,6 +79,15 @@ Route::group(array('prefix'=>'admin', 'namespace'=>'Admin', /*'middleware'=> 'ma
 	Route::get('sedes/{id?}/show', 'SedesController@show');
 	Route::get('sedes/{id?}/delete', 'SedesController@destroy');
 	Route::post('sedes/{id?}/edit', 'SedesController@update');
+
+	//pacientes
+	Route::get('pacientes', 'PacientesController@index');
+	Route::get('pacientes/create', 'PacientesController@create');
+	Route::post('pacientes/create', 'PacientesController@store');
+	Route::get('pacientes/{id?}/edit', 'PacientesController@edit');
+	Route::post('pacientes/{id?}/edit', 'PacientesController@update');
+	Route::get('pacientes/{id?}/show', 'PacientesController@show');
+
 	
 });
 
