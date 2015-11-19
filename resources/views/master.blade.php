@@ -28,7 +28,12 @@
 </body>
 <script>
     $(document).ready(function(){
-    $('#myTable').DataTable();
+    $('#myTable').DataTable( {
+        "language": {
+            "url": "../lang/datatables_es.json"
+        }
+    });
+
 });
 </script>
 </html>

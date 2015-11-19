@@ -48,7 +48,7 @@ Route::post('users/login', 'Auth\AuthController@postLogin');
 
 //-----------------------Fin Autenticación-----------------------------
 
-Route::group(array('prefix'=>'admin', 'namespace'=>'Admin', /*'middleware'=> 'manager'*/), function(){
+Route::group(array('prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=> 'manager'), function(){
 	//Admin dashboard
 	Route::get('/', 'PagesController@home');
 	//ver usuarios
