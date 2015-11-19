@@ -11,26 +11,27 @@
             <div class="list-group">
                 <div class="list-group-item">
                     <div class="row-action-primary">
-                        <i class="mdi-social-person"></i>
+                        <i class="mdi-action-account-box"></i>
                     </div>
                     <div class="row-content">
                         <div class="action-secondary"><i class="mdi-social-info"></i></div>
-                        <h4 class="list-group-item-heading">Manage User</h4>
-                        <a href="/admin/users" class="btn btn-default btn-raised">All Users</a>
+                        <h4 class="list-group-item-heading">Administración de usuarios</h4>
+                        <a href="/admin/users" class="btn btn-default btn-raised">Todos los usuarios</a>
                     </div>
                 </div>
                 <div class="list-group-separator"></div>
                 <div class="list-group-item">
                     <div class="row-action-primary">
-                        <i class="mdi-social-group"></i>
+                        <i class="mdi-action-settings-input-component"></i>
                     </div>
                     <div class="row-content">
                         <div class="action-secondary"><i class="mdi-material-info"></i></div>
-                        <h4 class="list-group-item-heading">Manage Roles</h4>
-                        <a href="/admin/roles" class="btn btn-default btn-raised">All Roles</a>
-                        <a href="/admin/roles/create" class="btn btn-primary btn-raised">Create A Role</a>
+                        <h4 class="list-group-item-heading">Administración de Roles</h4>
+                        <a href="/admin/roles" class="btn btn-default btn-raised">Todos los Roles</a>
+                        <a href="/admin/roles/create" class="btn btn-primary btn-raised">Crear un rol</a>
                     </div>
                 </div>
+                <!--
                 <div class="list-group-separator"></div>
                 <div class="list-group-item">
                     <div class="row-action-primary">
@@ -38,9 +39,9 @@
                     </div>
                     <div class="row-content">
                         <div class="action-secondary"><i class="mdi-material-info"></i></div>
-                        <h4 class="list-group-item-heading">Manage Posts</h4>
-                        <a href="/admin/posts" class="btn btn-default btn-raised">All Posts</a>
-                        <a href="/admin/posts/create" class="btn btn-primary btn-raised">Create A Post</a>
+                        <h4 class="list-group-item-heading">Administración de Posts</h4>
+                        <a href="/admin/posts" class="btn btn-default btn-raised">Todos los Posts</a>
+                        <a href="/admin/posts/create" class="btn btn-primary btn-raised">Crear un Post</a>
                     </div>
                 </div>
                 <div class="list-group-separator"></div>
@@ -50,15 +51,16 @@
                     </div>
                     <div class="row-content">
                         <div class="action-secondary"><i class="mdi-material-info"></i></div>
-                        <h4 class="list-group-item-heading">Manage Categories</h4>
-                        <a href="/admin/categories" class="btn btn-default btn-raised">All Categories</a>
-                        <a href="/admin/categories/create" class="btn btn-primary btn-raised">New Category</a>
+                        <h4 class="list-group-item-heading">Administración de Categorías</h4>
+                        <a href="/admin/categories" class="btn btn-default btn-raised">Todas las categorías</a>
+                        <a href="/admin/categories/create" class="btn btn-primary btn-raised">Nueva Categoría</a>
                     </div>
                 </div>
+                -->
                 <div class="list-group-separator"></div>
                 <div class="list-group-item">
                     <div class="row-action-primary">
-                        <i class="mdi-hospital-building"></i>
+                        <i class="mdi-maps-store-mall-directory"></i>
                     </div>
                     <div class="row-content">
                         <div class="action-secondary"><i class="mdi-social-info"></i></div>
@@ -72,12 +74,12 @@
                 <div class="list-group-separator"></div>
                 <div class="list-group-item">
                     <div class="row-action-primary">
-                        <i class="mdi-hospital-building"></i>
+                        <i class="mdi-social-group"></i>
                     </div>
                     <div class="row-content">
                         <div class="action-secondary"><i class="mdi-social-info"></i></div>
                         <h4 class="list-group-item-heading">Administrar pacientes</h4>
-                        <a href="/admin/pacientes" class="btn btn-default btn-raised">Todas los Pacientes</a>
+                        <a href="/admin/pacientes" class="btn btn-default btn-raised">Todos los Pacientes</a>
                         <a href="/admin/pacientes/create" class="btn btn-primary btn-raised">Nuevo Paciente</a>
                     </div>
                 </div>
