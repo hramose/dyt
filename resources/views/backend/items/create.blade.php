@@ -20,7 +20,7 @@
             <input type="hidden" name="_token" value="{!! csrf_token() !!}">
 
             <fieldset>
-                <legend>Create a new item</legend>
+                <legend>Crea un nuevo item</legend>
                 
                 <div class="form-group">
                     <label for="select" class="col-lg-2 control-label">Médico</label>
@@ -33,6 +33,16 @@
                                 {!! $usuario->name !!}
                             </option>
                             @endforeach
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="select" class="col-lg-2 control-label">Paciente</label>
+
+                    <div class="col-lg-10">
+                        <select class="form-control" id="paciente" name="paciente">
+                            <option value=""></option>
                         </select>
                     </div>
                 </div>
@@ -89,19 +99,25 @@
     $(document).ready(function(){
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
         $('#user').on('change',function(){
-            var data1 = $(this).val();
+            var data = $(this).val();
             
             $.ajax({
-                url:data1+"/getHistorias",
+                url:data+"/getHistorias",
                 type : "POST",
                 data: {_token: CSRF_TOKEN},
                 //data    :{ data1:data },
                 dataType:"JSON",
-                success : function(data1){
-                    console.log(data1)
-                }
+                success : function(data){
+                    console.log(data);
+                    var option;
+                    option = "<option value=" + data[0].id + ">" + data[0].nombre+"</option>";
+                   
+                   // for (var d in arrDatos){
+                   //     option = "<option value=" + d.id + ">" + d.nombre+"</option>";
+                   //     $("#paciente").append(option);
+                   // }
                
-
+                }
             });
             /*$("#user option:selected").each(function(){
                 elegido = $(this).val();

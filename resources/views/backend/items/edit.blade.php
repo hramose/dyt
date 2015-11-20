@@ -20,7 +20,7 @@
                 <input type="hidden" name="_token" value="{!! csrf_token() !!}">
 
                 <fieldset>
-                    <legend>Edit a post</legend>
+                    <legend>Editar un item</legend>
                     <div class="form-group">
                         <label for="title" class="col-lg-2 control-label">Title</label>
                         <div class="col-lg-10">

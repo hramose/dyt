@@ -5,7 +5,7 @@
     <div class="container col-md-8 col-md-offset-2">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h2> All posts </h2>
+                <h2> Todos los items </h2>
             </div>
             @if (session('status'))
                 <div class="alert alert-success">
@@ -13,7 +13,7 @@
                 </div>
             @endif
             @if ($items_hc->isEmpty())
-                <p> There is no post.</p>
+                <p> No hay items cargados.</p>
             @else
                 <table class="table" id="myTable">
                     <thead>

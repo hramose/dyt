@@ -35,10 +35,10 @@ class HistoriasClinicasController extends Controller
         //$dato=$id;
       //  dump($dato);
         $user = User::find($id);
-        
-        foreach ($user->pacientes as $paciente) {
-             var_dump($paciente->id);
-        }
+        $pacientes = $user->pacientes;
+        //foreach ($user->pacientes as $paciente) {
+        //     var_dump($paciente->id);
+        //}
         return compact('pacientes');
     }
 
