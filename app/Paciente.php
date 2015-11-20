@@ -22,6 +22,11 @@ class Paciente extends Model
     	return $this->belongsToMany('App\User');
     }
 
+    public function paciente()
+    {
+        return $this->hasOne('App\Item_hc');
+    }
+
      public function saveMedico($user)
     {
         if(!empty($user))
