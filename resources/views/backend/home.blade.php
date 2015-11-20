@@ -57,6 +57,7 @@
                     </div>
                 </div>
                 -->
+                <!-- sedes -->
                 <div class="list-group-separator"></div>
                 <div class="list-group-item">
                     <div class="row-action-primary">
@@ -69,8 +70,9 @@
                         <a href="/admin/sedes/create" class="btn btn-primary btn-raised">Nueva Sede</a>
                     </div>
                 </div>
-
-
+                <!-- sedes -->
+                
+                <!-- pacientes -->
                 <div class="list-group-separator"></div>
                 <div class="list-group-item">
                     <div class="row-action-primary">
@@ -83,6 +85,26 @@
                         <a href="/admin/pacientes/create" class="btn btn-primary btn-raised">Nuevo Paciente</a>
                     </div>
                 </div>
+                <!-- pacientes -->
+
+                <!-- items -->
+                <div class="list-group-separator"></div>
+                <div class="list-group-item">
+                    <div class="row-action-primary">
+                        <i class="mdi-social-group"></i>
+                    </div>
+                    <div class="row-content">
+                        <div class="action-secondary"><i class="mdi-social-info"></i></div>
+                        <h4 class="list-group-item-heading">Administrar items história clínica</h4>
+                        <a href="/admin/items" class="btn btn-default btn-raised">Todos los items</a>
+                        <a href="/admin/items/create" class="btn btn-primary btn-raised">Nuevo Item</a>
+                    </div>
+                </div>
+                <!-- items -->
+
+
+
+
             </div>
 
         </div>

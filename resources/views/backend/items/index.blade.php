@@ -12,30 +12,29 @@
                     {{ session('status') }}
                 </div>
             @endif
-            @if ($posts->isEmpty())
+            @if ($items_hc->isEmpty())
                 <p> There is no post.</p>
             @else
                 <table class="table" id="myTable">
                     <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Title</th>
-                        <th>Slug</th>
-                        <th>Created At</th>
-                        <th>Updated At</th>
+                        <th>id</th>
+                        <th>Titulo</th>
+                        <th>fecha</th>
 
+
+                        
                     </tr>
                     </thead>
                     <tbody>
-                    @foreach($posts as $post)
+                    @foreach($items_hc as $item)
                         <tr>
-                            <td>{!! $post->id !!}</td>
+                            <td>{{ $item->id }}</td>
                             <td>
-                                <a href="{!! action('Admin\PostsController@edit', $post->id) !!}">{!! $post->title !!} </a>
+                                <a href="{!! action('Admin\HistoriasClinicasController@edit', $item->id) !!}">{!! $item->title !!} </a>
                             </td>
-                            <td>{!! $post->slug !!}</td>
-                            <td>{!! $post->created_at !!}</td>
-                            <td>{!! $post->updated_at !!}</td>
+                            <td>{{ $item->created_at }}</td>
+                            
                         </tr>
                     @endforeach
                     </tbody>

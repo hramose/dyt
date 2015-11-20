@@ -88,6 +88,20 @@ Route::group(array('prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=> 'mana
 	Route::post('pacientes/{id?}/edit', 'PacientesController@update');
 	Route::get('pacientes/{id?}/show', 'PacientesController@show');
 
+	//items historia clinica
+	Route::get('items', 'HistoriasClinicasController@index');
+	Route::get('items/create', 'HistoriasClinicasController@create');
+	Route::post('items/create', 'HistoriasClinicasController@store');
+	Route::get('items/{id?}/edit', 'HistoriasClinicasController@edit');
+	Route::post('items/{id?}/edit', 'HistoriasClinicasController@update');
+	Route::post('items/{id?}/delete', 'HistoriasClinicasController@destroy');
+	Route::post('items/{id?}/show', 'HistoriasClinicasController@show');
+
+	Route::post('items/{id?}/getHistorias','HistoriasClinicasController@getPacientesByMedico');
+
+
+
+
 	
 });
 

@@ -1,5 +1,6 @@
 <html>
 <head>
+<meta name="csrf-token" content="{{ csrf_token() }}" />
     <title> @yield('title') </title>
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"> 
     <!-- Include roboto.css to use the Roboto web font, material.css to include the theme and ripples.css to style the ripple effect -->
@@ -25,6 +26,8 @@
     });
 </script>
 <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
+@yield('scripts')
+
 </body>
 <script>
     $(document).ready(function(){

@@ -19,12 +19,14 @@ class Paciente extends Model
 
     public function users()
     {
-    	return $this->belongsToMany('App\User');
+    	return $this->belongsToMany('App\User', 'paciente_user')->withPivot('user_id', 'paciente_id');
     }
 
-    public function paciente()
+   
+
+    public function Item_hc()
     {
-        return $this->hasOne('App\Item_hc');
+        return $this->hasMany('App\Item_hc');
     }
 
      public function saveMedico($user)
