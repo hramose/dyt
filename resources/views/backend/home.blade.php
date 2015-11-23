@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row banner">
 
-        <div class="col-md-12">
+        <div class="col-lg-6">
 
             <div class="list-group">
                 <div class="list-group-item">
@@ -86,9 +86,12 @@
                     </div>
                 </div>
                 <!-- pacientes -->
-
+            </div>
+        </div>  <!-- Col-md -->
+        <div class="col-lg-6">
+            <div class="list-group">
                 <!-- items -->
-                <div class="list-group-separator"></div>
+                <!-- <div class="list-group-separator"></div> -->
                 <div class="list-group-item">
                     <div class="row-action-primary">
                         <i class="mdi-social-group"></i>
@@ -101,13 +104,37 @@
                     </div>
                 </div>
                 <!-- items -->
-
-
-
-
+                <!-- Campos Base -->
+                <div class="list-group-separator"></div>
+                <div class="list-group-item">
+                    <div class="row-action-primary">
+                        <i class="mdi-av-my-library-books"></i>
+                    </div>
+                    <div class="row-content">
+                        <div class="action-secondary"><i class="mdi-social-info"></i></div>
+                        <h4 class="list-group-item-heading">Administrar campos base</h4>
+                        <a href="/admin/estudios/camposbase" class="btn btn-default btn-raised">Todos Campos Base</a>
+                        <a href="/admin/estudios/camposbase/create" class="btn btn-primary btn-raised">Nuevo campo base</a>
+                    </div>
+                </div>
+                <!-- Campos Base -->
+                <!-- Unidades de Medida -->
+                <div class="list-group-separator"></div>
+                <div class="list-group-item">
+                    <div class="row-action-primary">
+                        <i class="mdi-editor-format-underline"></i>
+                    </div>
+                    <div class="row-content">
+                        <div class="action-secondary"><i class="mdi-social-info"></i></div>
+                        <h4 class="list-group-item-heading">Administrar Unidades de Medida</h4>
+                        <a href="/admin/estudios/unidadesmedida" class="btn btn-default btn-raised">Todas U. Medida</a>
+                        <a href="/admin/estudios/unidadesmedida/create" class="btn btn-primary btn-raised">Nueva unidad de medida</a>
+                    </div>
+                </div>
+                <!-- Unidades de Medida -->
             </div>
-
         </div>
+
 
     </div>
 </div>

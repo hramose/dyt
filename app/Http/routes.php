@@ -99,8 +99,19 @@ Route::group(array('prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=> 'mana
 
 	Route::post('items/{id?}/getHistorias','HistoriasClinicasController@getPacientesByMedico');
 
+	//Campos Base
+	Route::get('estudios/camposbase', 'CamposBaseController@index');
+    Route::get('estudios/camposbase/create', 'CamposBaseController@create');
+    Route::post('estudios/camposbase/create', 'CamposBaseController@store');
+    Route::get('estudios/camposbase/{id?}/edit', 'CamposBaseController@edit');
+	Route::post('estudios/camposbase/{id?}/edit','CamposBaseController@update');
 
-
+	//Unidades de Medida
+	Route::get('estudios/unidadesmedida', 'UnidadesMedidaController@index');
+    Route::get('estudios/unidadesmedida/create', 'UnidadesMedidaController@create');
+    Route::post('estudios/unidadesmedida/create', 'UnidadesMedidaController@store');
+    Route::get('estudios/unidadesmedida/{id?}/edit', 'UnidadesMedidaController@edit');
+	Route::post('estudios/unidadesmedida/{id?}/edit','UnidadesMedidaController@update');
 
 	
 });
