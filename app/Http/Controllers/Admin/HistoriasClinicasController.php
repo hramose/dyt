@@ -5,11 +5,12 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+
 use App\Http\Controllers\Controller;
 use App\User;
 use App\Paciente;
 use App\Item_hc;
-
+use App\Http\Requests\ItemFormRequest;
 
 
 class HistoriasClinicasController extends Controller
@@ -19,7 +20,7 @@ class HistoriasClinicasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id = null)
     {
         $pacientes = Paciente::all();
         $medicos = User::all();
@@ -30,15 +31,20 @@ class HistoriasClinicasController extends Controller
 
 
     public function getPacientesByMedico(Request $request,$id){
-
+        
         $dato = $request->get('elegido');
         //$dato=$id;
       //  dump($dato);
-        $user = User::find($id);
-        $pacientes = $user->pacientes;
-        //foreach ($user->pacientes as $paciente) {
-        //     var_dump($paciente->id);
-        //}
+        
+        if($id != ''){
+            $user = User::find($id);
+            $pacientes = $user->pacientes;
+        
+            
+        }else{
+            $pacientes = "";    
+            
+        }
         return compact('pacientes');
     }
 
@@ -60,9 +66,24 @@ class HistoriasClinicasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ItemFormRequest $request)
     {
-        //
+       //
+        $item = new Item_hc(array(
+            'id_sede' => 1,
+            'id_usuario' => $request->get('user'),
+            'id_paciente' => $request->get('id_paciente'),
+            'titulo' => $request->get('titulo'),
+            'descripcion' => $request->get('descripcion'),
+            'path' => $request->get('path')
+
+
+        ));
+
+        $item->save();
+        
+
+        return redirect('/admin/items/create')->with('status', 'Un item de historia clínica ha sido creado.');
     }
 
     /**

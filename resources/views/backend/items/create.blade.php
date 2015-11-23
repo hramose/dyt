@@ -1,5 +1,5 @@
 @extends('master')
-@section('title', 'Create A New Post')
+@section('title', 'Create un nuevo item');
 
 @section('content')
 <div class="container col-md-8 col-md-offset-2">
@@ -27,7 +27,8 @@
 
                     <div class="col-lg-10">
                         <select class="form-control" id="user" name="user">
-                        <option value=""></option>
+                            <option value="" id="vacio"></option>
+                            
                             @foreach($usuarios as $usuario)
                             <option value="{!! $usuario->id !!}">
                                 {!! $usuario->name !!}
@@ -100,7 +101,7 @@
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
         $('#user').on('change',function(){
             var data = $(this).val();
-            
+            $('#vacio').hide();
             $.ajax({
                 url:data+"/getHistorias",
                 type : "POST",
@@ -108,11 +109,16 @@
                 //data    :{ data1:data },
                 dataType:"JSON",
                 success : function(data){ 
-                    var option;
-                     $.each(data.pacientes, function() {
-                        option = "<option value=" + this.id + ">" + this.nombre +"</option>";
-                        $("#paciente").append(option);
-                    });
+                    
+                        var option;
+                        $('#paciente option').remove();
+
+                       
+                         $.each(data.pacientes, function() {
+                            option = "<option value=" + this.id + ">" + this.nombre +"</option>";
+                            $("#paciente").append(option);
+                        });
+                    
                 }
             });
         });

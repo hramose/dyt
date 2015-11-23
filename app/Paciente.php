@@ -29,6 +29,8 @@ class Paciente extends Model
         return $this->hasMany('App\Item_hc');
     }
 
+    
+
      public function saveMedico($user)
     {
         if(!empty($user))
