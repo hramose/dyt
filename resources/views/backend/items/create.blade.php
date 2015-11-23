@@ -107,25 +107,15 @@
                 data: {_token: CSRF_TOKEN},
                 //data    :{ data1:data },
                 dataType:"JSON",
-                success : function(data){
-                    console.log(data);
+                success : function(data){ 
                     var option;
-                    option = "<option value=" + data[0].id + ">" + data[0].nombre+"</option>";
-                   
-                   // for (var d in arrDatos){
-                   //     option = "<option value=" + d.id + ">" + d.nombre+"</option>";
-                   //     $("#paciente").append(option);
-                   // }
-               
+                     $.each(data.pacientes, function() {
+                        option = "<option value=" + this.id + ">" + this.nombre +"</option>";
+                        $("#paciente").append(option);
+                    });
                 }
             });
-            /*$("#user option:selected").each(function(){
-                elegido = $(this).val();
-                $.post(elegido+'/getHistorias', { elegido:elegido }, function(data){
-                    console.log(data);
-                })
-            })*/
-        })
+        });
     });
 </script>
 @endsection
