@@ -13,6 +13,6 @@ class UnidadMedida extends Model
 
     public function camposBase()
     {
-    	return $this->belongsToMany('App\CampoBase', 'campos_base_unidad_medidas')->withPivot('campos_base_id', 'unidad_medidas_id');
+    	return $this->hasMany('App\CampoBase');
     }
 }

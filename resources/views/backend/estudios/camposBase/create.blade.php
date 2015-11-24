@@ -45,7 +45,7 @@
                         <label for="select" class="col-lg-2 control-label">Unidad de Medida</label>
 
                         <div class="col-lg-10">
-                            <select class="form-control" id="unidad_medida" name="unidad_medida">
+                            <select class="form-control" id="id_unidad" name="id_unidad">
                                 <option value="" id="vacio"></option>
                                 
                                 @foreach($unidadesMedida as $unidadMedida)

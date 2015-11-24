@@ -43,17 +43,19 @@ class CamposBaseController extends Controller
      */
     public function store(Request $request)
     {
+
         //Guarda datos del formulario de campos base
         $campoBase = new CampoBase(array(
-                'name' => $request->get('nombre'),
+                'nombre' => $request->get('nombre'),
                 'descripcion' => $request->get('descripcion'),
+                'id_unidad' => $request->get('id_unidad'),
                 'tipo' => $request->get('tipo'),
                 'ref_min' => $request->get('ref_min'),
                 'ref_max' => $request->get('ref_max'),
         ));
-
         $campoBase->save();
-        $campoBase->saveUnidadMedida($request->get('unidad_medida'));
+        //$campoBase->UnidadesMedidas()->sync($request->get('unidad_medida'));
+        //$campoBase->saveUnidadMedida($request->get('unidad_medida'));
 
         return redirect('/admin/estudios/camposbase/create')->with('status', 'Un nuevo campo base fue creado.');
     }

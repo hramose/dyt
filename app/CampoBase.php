@@ -12,14 +12,15 @@ class CampoBase extends Model
     protected $fillable = [
     			'nombre',
     			'descripcion',
+                'id_unidad',
     			'tipo',
     			'ref_min',
     			'ref_max',
     		];
 
-    public function UnidadesMedidas()
+    public function UnidadMedida()
     {
-    	return $this->belongsToMany('App\UnidadMedida', 'campos_base_unidad_medidas')->withPivot('campos_base_id', 'unidad_medidas_id');
+    	return $this->belongsTo('App\UnidadMedida');
     }
 
     public function saveUnidadMedida($unidadMedida)
