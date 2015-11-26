@@ -116,5 +116,10 @@ Route::group(array('prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=> 'mana
 	
 });
 
+Route::resource('api/medicamentos', 'Admin\MedicamentosController');
+
+
 Route::get('/blog', 'BlogController@index');
 Route::get('/blog/{slug?}', 'BlogController@show');
+
+Route::get('/medicamentos', 'Admin\MedicamentosAppController@index');
