@@ -132,6 +132,22 @@
                     </div>
                 </div>
                 <!-- Unidades de Medida -->
+                <!-- Medicamentos -->
+                <div class="list-group-separator"></div>
+                <div class="list-group-item">
+                    <div class="row-action-primary">
+                        <i class="mdi-editor-format-underline"></i>
+                    </div>
+                    <div class="row-content">
+                        <div class="action-secondary"><i class="mdi-social-info"></i></div>
+                        <h4 class="list-group-item-heading">Administrar Medicamentos</h4>
+                        <a href="/admin/medicamentos" class="btn btn-default btn-raised">Todos los Med</a>
+                        <a href="/admin/medicamentos/create" class="btn btn-primary btn-raised">Nuevo Medicamento</a>
+                    </div>
+                </div>
+                <!-- Medicamentos -->
+
+
             </div>
         </div>
 

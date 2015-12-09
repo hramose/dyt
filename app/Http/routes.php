@@ -113,8 +113,12 @@ Route::group(array('prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=> 'mana
     Route::get('estudios/unidadesmedida/{id?}/edit', 'UnidadesMedidaController@edit');
 	Route::post('estudios/unidadesmedida/{id?}/edit','UnidadesMedidaController@update');
 
+	Route::get('medicamentos', 'MedicamentosController@index');
+	Route::get('medicamentos/create', 'MedicamentosController@create');
+
 	
 });
 
 Route::get('/blog', 'BlogController@index');
 Route::get('/blog/{slug?}', 'BlogController@show');
+
