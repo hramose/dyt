@@ -115,6 +115,7 @@ Route::group(array('prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=> 'mana
 
 	Route::get('medicamentos', 'MedicamentosController@index');
 	Route::get('medicamentos/create', 'MedicamentosController@create');
+	Route::post('medicamentos/create','MedicamentosController@store');
 
 	
 });

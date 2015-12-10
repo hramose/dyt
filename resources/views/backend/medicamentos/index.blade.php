@@ -18,7 +18,7 @@
                 <table class="table" id="myTable">
                     <thead>
                     <tr>
-                        <th>Unidad</th>
+                        <th>Nombre</th>
                     </tr>
                     </thead>
                     <tbody>

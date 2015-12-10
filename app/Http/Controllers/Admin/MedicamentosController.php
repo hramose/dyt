@@ -41,7 +41,7 @@ class MedicamentosController extends Controller
     public function store(Request $request)
     {
         //Guarda datos del formulario unidades de medida
-        $medicamentos = new Medicamento(array(
+        $medicamento = new Medicamento(array(
                 'nombre_medicamento' => $request->get('nombre_medicamento'),
         ));
 
