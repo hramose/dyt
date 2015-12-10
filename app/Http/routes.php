@@ -113,11 +113,11 @@ Route::group(array('prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=> 'mana
     Route::get('estudios/unidadesmedida/{id?}/edit', 'UnidadesMedidaController@edit');
 	Route::post('estudios/unidadesmedida/{id?}/edit','UnidadesMedidaController@update');
 
-<<<<<<< Updated upstream
+	//Medicamentos
 	Route::get('medicamentos', 'MedicamentosController@index');
 	Route::get('medicamentos/create', 'MedicamentosController@create');
 	Route::post('medicamentos/create','MedicamentosController@store');
-=======
+
 	//Estudios
 	Route::get('estudios', 'EstudiosController@index');
 	Route::get('estudios/create', 'EstudiosController@create');
@@ -126,9 +126,6 @@ Route::group(array('prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=> 'mana
 	Route::get('estudios/{id?}/edit','EstudiosController@edit');
 	Route::post('estudios/{id?}/edit','EstudiosController@update');
 	Route::post('estudios/{id?}/delete','EstudiosController@destroy');
-
->>>>>>> Stashed changes
-
 	
 });
 
