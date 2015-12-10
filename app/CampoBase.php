@@ -23,6 +23,11 @@ class CampoBase extends Model
     	return $this->belongsTo('App\UnidadMedida');
     }
 
+    public function Estudios()
+    {
+        return $this->belongsToMany('App\Estudio', 'camposbase_estudios')->withPivot('campo_base_id','estudio_id');
+    }
+
     public function saveUnidadMedida($unidadMedida)
     {
         if(!empty($unidadMedida))
