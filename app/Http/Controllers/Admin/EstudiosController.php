@@ -43,7 +43,17 @@ class EstudiosController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $estudio = new Estudio(array(
+            'nombre' => $request->get('nombre'),
+            'observaciones' => $request->get('observaciones')
+        ));
+
+        $estudio->save();
+        //$campos = $estudio->camposBase->lists('id')->toArray();
+        $estudio->saveCamposBase($request->get('campobase'));
+        
+        //dump($campos);die;
+        return redirect('/admin/estudios/create')->with('status', 'Un nuevo estudio ha sido creado.');
     }
 
     /**

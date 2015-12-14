@@ -26,6 +26,7 @@
     $(document).ready(function() {
         // This command is used to initialize some elements and make them work properly
         $.material.init();
+
     });
 </script>
 <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
@@ -39,6 +40,11 @@
             "url": "../lang/datatables_es.json"
         }
     });
+
+    $('#tombo').on('click', function(){
+       
+            $('#cont').append($('#campos').html());
+        })
 
 });
 </script>

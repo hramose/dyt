@@ -37,9 +37,12 @@
                             <input type="textarea" class="form-control" id="observaciones" name="observaciones">
                         </div>
                     </div>
+
+                    
                     <!-- Observaciones -->
+                    <button type="button" id="tombo">+ campos</button>
                     <hr>
-                    <div class="form-group">
+                    <div class="form-group" style="display:none;" id="campos">
                         <label for="select" class="col-lg-2 control-label">Campo</label>
 
                         <div class="col-lg-10">
@@ -50,7 +53,9 @@
                             </select>
                         </div>
                     </div>
-
+                    <div id="cont">
+                        
+                    </div>
                     <div class="form-group">
                         <div class="col-lg-10 col-lg-offset-2">
                             <button type="reset" class="btn btn-default">Cancel</button>
@@ -61,4 +66,9 @@
             </form>
         </div>
     </div>
+
+    <script>
+
+
+    </script>
 @endsection 
