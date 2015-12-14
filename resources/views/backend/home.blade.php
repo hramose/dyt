@@ -132,7 +132,7 @@
                     </div>
                 </div>
                 <!-- Unidades de Medida -->
-<<<<<<< Updated upstream
+
                 <!-- Medicamentos -->
                 <div class="list-group-separator"></div>
                 <div class="list-group-item">
@@ -149,7 +149,6 @@
                 <!-- Medicamentos -->
 
 
-=======
                 <!-- Estudios -->
                 <div class="list-group-separator"></div>
                 <div class="list-group-item">
@@ -164,7 +163,22 @@
                     </div>
                 </div>
                 <!-- Estudios -->
->>>>>>> Stashed changes
+
+                <!-- Tratamientos -->
+                <div class="list-group-separator"></div>
+                <div class="list-group-item">
+                    <div class="row-action-primary">
+                        <i class="material-icons">local_hospital</i>
+                    </div>
+                    <div class="row-content">
+                        <div class="action-secondary"><i class="mdi-social-info"></i></div>
+                        <h4 class="list-group-item-heading">Administrar Tratamientos</h4>
+                        <a href="/admin/tratamientos" class="btn btn-default btn-raised">Todos los tratamientos</a>
+                        <a href="/admin/tratamientos/create" class="btn btn-primary btn-raised">Nuevo tratamiento</a>
+                    </div>
+                </div>
+                <!-- tratamientos -->
+
             </div>
         </div>
 

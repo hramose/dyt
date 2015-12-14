@@ -126,6 +126,15 @@ Route::group(array('prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=> 'mana
 	Route::get('estudios/{id?}/edit','EstudiosController@edit');
 	Route::post('estudios/{id?}/edit','EstudiosController@update');
 	Route::post('estudios/{id?}/delete','EstudiosController@destroy');
+
+	//Estudios
+	Route::get('tratamientos', 'TratamientosController@index');
+	Route::get('tratamientos/create', 'TratamientosController@create');
+	Route::post('tratamientos/create', 'TratamientosController@store');
+	Route::get('tratamientos/{id?}/show','TratamientosController@show');
+	Route::get('tratamientos/{id?}/edit','TratamientosController@edit');
+	Route::post('tratamientos/{id?}/edit','TratamientosController@update');
+	Route::post('tratamientos/{id?}/delete','TratamientosController@destroy');
 	
 });
 
