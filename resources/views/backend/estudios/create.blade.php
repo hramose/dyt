@@ -43,9 +43,12 @@
                     <button type="button" id="tombo">+ campos</button>
                     <hr>
                     <div class="form-group" style="display:none;" id="campos">
-                        <label for="select" class="col-lg-2 control-label">Campo</label>
+
+                        
 
                         <div class="col-lg-10">
+                        <label for="select" class="col-lg-2 control-label">Campo</label>
+                        <button type="button" class="elimina" onclick="$(this).parent().remove();">x</button>
                             <select class="form-control" id="camposbase" name="campobase[]">
                                 @foreach($camposbase as $campobase)
                                     <option value="{!! $campobase->id !!}"  >{!! $campobase->nombre !!} </option>
