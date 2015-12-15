@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Estudio;
 use App\CampoBase;
+use App\UnidadMedida;
 
 class EstudiosController extends Controller
 {
@@ -32,7 +33,8 @@ class EstudiosController extends Controller
     {
         //
         $camposbase = CampoBase::all();
-        return view('backend.estudios.create', compact('camposbase'));
+        $unidadesMedida = UnidadMedida::all();
+        return view('backend.estudios.create', compact('camposbase', 'unidadesMedida'));
     }
 
     /**
