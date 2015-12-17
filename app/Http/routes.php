@@ -135,9 +135,23 @@ Route::group(array('prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=> 'mana
 	Route::get('tratamientos/{id?}/edit','TratamientosController@edit');
 	Route::post('tratamientos/{id?}/edit','TratamientosController@update');
 	Route::post('tratamientos/{id?}/delete','TratamientosController@destroy');
+
 	
 });
+
+Route::resource('api/camposbase', 'Admin\CamposBaseAjaxController');
+
+Route::get('/camposbase', 'Admin\CamposBaseAppController@index');
+
+
 
 Route::get('/blog', 'BlogController@index');
 Route::get('/blog/{slug?}', 'BlogController@show');
 
+Route::get('autocomplete', function()
+{
+
+    return View::make('autocomplete');
+});
+
+Route::get('/campos/{text?}', 'Admin\CamposBaseController@busqueda');

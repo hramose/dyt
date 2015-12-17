@@ -8,6 +8,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\CampoBase;
 use App\UnidadMedida;
+use DB;
 
 class CamposBaseController extends Controller
 {
@@ -103,5 +104,18 @@ class CamposBaseController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function busqueda(Request $request)
+    {
+        //Muestra todos los campos creados
+    
+        //$camposBase = CampoBase::nombre($request->get('term'))->get();
+        $camposBase = DB::table('campos_base')->select('nombre')->where('nombre', 'like',$request->get('term').'%' )->get();
+        $res = '';
+        foreach($camposBase as $cb){
+            $res[] = $cb->nombre;
+        }
+        return $res;
     }
 }

@@ -1,63 +1,47 @@
-var app = angular.module('estudiosApp', [], function($interpolateProvider) {
+var app = angular.module('CamposBaseApp', ['ngRoute'], function($interpolateProvider) {
 	$interpolateProvider.startSymbol('<%');
 	$interpolateProvider.endSymbol('%>');
 });
  
-app.controller('EstudiosController', function($scope, $http) {
- 
+app.controller('CamposBaseController', function($scope, $http) {
+ 	
 	$scope.camposbase = [];
 	$scope.loading = false;
  
 	$scope.init = function() {
 		$scope.loading = true;
-		$http.get('/api/estudios').
-		success(function(data, status, headers, config) {
-			$scope.camposbase = data;
+		$http.get('/api/camposbase').success(function(data, status, headers, config) {
+			$scope.campobase = data;
 				$scope.loading = false;
  
 		});
 	}
  
-	$scope.agregaCampoBase = function() {
-				$scope.loading = true;
- 
-		$http.post('/api/estudios', {
-			nombre: $scope.campobase.nombre
+	$scope.addCampoBase = function() {
+		
+
+		$scope.loading = true;
+        
+		$http.post('/api/camposbase', {
+			nombre: $scope.camposbase.nombre,
+			descripcion: $scope.camposbase.descripcion,
+			tipo: $scope.camposbase.tipo,
+			id_unidad: $scope.camposbase.id_unidad,
+			ref_min: $scope.camposbase.ref_min,
+			ref_max: $scope.camposbase.ref_max
+
 		}).success(function(data, status, headers, config) {
 			$scope.camposbase.push(data);
-			$scope.campobase = '';
-				$scope.loading = false;
+			$scope.camposbase = '';
+			$scope.loading = false;
  
 		});
 	};
- 
-	$scope.updateCampoBase = function(campobase) {
-		$scope.loading = true;
- 
-		$http.put('/api/estudios/' + campobase.id, {
-			nombre: campobase.title,
-		}).success(function(data, status, headers, config) {
-			campobase = data;
-				$scope.loading = false;
- 
-		});;
-	};
- 
-	$scope.borraCampoBase = function(index) {
-		$scope.loading = true;
- 
-		var campobase = $scope.camposbase[index];
- 
-		$http.delete('/api/estudios/' + campobase.id)
-			.success(function() {
-				$scope.camposbase.splice(index, 1);
-					$scope.loading = false;
- 
-			});;
-	};
+
+
+	
  
  
 	$scope.init();
  
 });
- 

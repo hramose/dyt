@@ -22,6 +22,8 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 <script src="/js/ripples.min.js"></script>
 <script src="/js/material.min.js"></script>
+
+
 <script>
     $(document).ready(function() {
         // This command is used to initialize some elements and make them work properly
@@ -30,9 +32,13 @@
     });
 </script>
 <script src="https://cdn.datatables.net/1.10.10/js/jquery.dataTables.min.js"></script>
-@yield('scripts')
 
+@yield('scripts')
+<script src="/js/angular.min.js"></script>
+ <script src="/js/angular-route.min.js"></script>
+ <script src="/js/app.js"></script>
 </body>
+
 <script>
     $(document).ready(function(){
     $('#myTable').DataTable( {
