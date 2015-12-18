@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 
-use App\Http\Requests;
+use Request as Req;
 use App\Http\Controllers\Controller;
 use App\CampoBase;
 use App\UnidadMedida;
@@ -18,11 +18,17 @@ class CamposBaseAppController extends Controller
      */
     public function index()
     {
-        return view('backend.estudios.camposBase.create');
+    	$unidadesMedida = UnidadMedida::all();
+        return view('backend.estudios.camposBase.create', compact('unidadesMedida'));
     }
 
     
-
+    public function store(){
+    	
+        $campobase = new CampoBase(Req::all());
+        $campobase->save();
+        return $campobase;
+    }
     
    
 

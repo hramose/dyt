@@ -45,8 +45,6 @@
                     <hr>
                     <div class="form-group" style="display:none;" id="campos">
 
-                        
-
                         <div class="col-lg-10">
                         <label for="select" class="col-lg-2 control-label">Campo</label>
                         <button type="button" class="elimina" onclick="$(this).parent().remove();">x</button>
@@ -57,6 +55,8 @@
                             </select>
                             <button type="button" class="agrega btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal" onclick="">+</button>
                         </div>
+
+                        
                     </div>
                     <div id="cont">
                         
@@ -97,7 +97,7 @@
                     <div class="form-group">
                         <label for="nombre" class="col-lg-2 control-label">Nombre</label>
                         <div class="col-lg-10">
-                            <input type='text' ng-model="campobase.nombre">
+                            <input type='text' ng-model="camposbase.nombre">
                             
                         </div>
                     </div>
@@ -106,21 +106,27 @@
                         <label for="descripcion" class="col-lg-2 control-label">Descripción</label>
                         <div class="col-lg-10">
 
-                            <input type="descripcion" class="form-control"  ng-model="campobase.descripcion">
+                            <input type="descripcion" id="descripcion" class="form-control"  ng-model="camposbase.descripcion">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="tipo" class="col-lg-2 control-label">Tipo</label>
                         <div class="col-lg-10">
-                            <input type="tipo" class="form-control"  ng-model="campobase.tipo">
+                            <select class="form-control" id="tipo" ng-model="camposbase.tipo">
+                                    <option value="texto">Texto</option>
+                                    <option value="número entero">Número entero</option>
+                                    <option value="número con decimales">Número con decimales</option>
+                                    
+                            </select>
+                            
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="select" class="col-lg-2 control-label">Unidad de Medida</label>
+                        <label for="select" class="col-lg-2 control-label">U.Medida</label>
 
                         <div class="col-lg-10">
-                            <select class="form-control" ng-model="campobase.id_unidad">
+                            <select class="form-control" ng-model="camposbase.id_unidad">
                                 <option value="" id="vacio"></option>
                                 
                                 @foreach($unidadesMedida as $unidadMedida)
@@ -131,17 +137,17 @@
                             </select>
                         </div>
                     </div>
-                    <br><br>
+                   
                     <div class="form-group">
-                        <label for="ref_min" class="col-lg-2 control-label">Valor de Referencia Mínimo</label>
+                        <label for="ref_min" class="col-lg-2 control-label">Ref. Mín</label>
                         <div class="col-lg-10">
-                            <input type="ref_min" class="form-control" ng-model="campobase.ref_min">
+                            <input type="ref_min" id="ref_min" class="form-control" ng-model="camposbase.ref_min">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="ref_max" class="col-lg-2 control-label">Valor de Referencia Máximo</label>
+                        <label for="ref_max" class="col-lg-2 control-label">Ref. Máx</label>
                         <div class="col-lg-10">
-                            <input type="ref_max" class="form-control" ng-model="campobase.ref_max">
+                            <input type="ref_max" id="ref_max" class="form-control" ng-model="camposbase.ref_max">
                         </div>
                     </div>
                 </fieldset>
