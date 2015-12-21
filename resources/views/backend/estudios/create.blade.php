@@ -48,7 +48,7 @@
                         <div class="col-lg-10">
                         <label for="select" class="col-lg-2 control-label">Campo</label>
                         <button type="button" class="elimina" onclick="$(this).parent().remove();">x</button>
-                            <select class="form-control" id="camposbase" name="campobase[]">
+                            <select class="form-control selectCampos" id="camposbase" name="campobase[]">
                                 @foreach($camposbase as $campobase)
                                     <option value="{!! $campobase->id !!}"  >{!! $campobase->nombre !!} </option>
                                 @endforeach

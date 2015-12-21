@@ -105,6 +105,7 @@ Route::group(array('prefix'=>'admin', 'namespace'=>'Admin', 'middleware'=> 'mana
     Route::post('estudios/camposbase/create', 'CamposBaseController@store');
     Route::get('estudios/camposbase/{id?}/edit', 'CamposBaseController@edit');
 	Route::post('estudios/camposbase/{id?}/edit','CamposBaseController@update');
+	Route::post('estudios/camposbase/getAllCamposBase','CamposBaseController@getAllCamposBase');
 
 	//Unidades de Medida
 	Route::get('estudios/unidadesmedida', 'UnidadesMedidaController@index');

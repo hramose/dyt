@@ -118,4 +118,9 @@ class CamposBaseController extends Controller
         }
         return $res;
     }
+
+    public function getAllCamposBase(){
+        $campos = CampoBase::all();
+        return json_encode($campos);
+    }
 }

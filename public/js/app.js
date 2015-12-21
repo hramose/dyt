@@ -23,7 +23,7 @@ app.controller('CamposBaseController', function($scope, $http) {
 		$scope.loading = true;
         
 		$http.post('/admin/estudios/camposbase1', 
-			{
+		{
 			nombre: $scope.camposbase.nombre,
 			descripcion: $scope.camposbase.descripcion,
 			tipo: $scope.camposbase.tipo,
@@ -33,10 +33,24 @@ app.controller('CamposBaseController', function($scope, $http) {
 
 			}).success(function(data, status, headers, config) {
 
+
 			$scope.camposbase.push(data);
+
+			
+			$('.selectCampos').each(function(index){
+			 				// $( this ).empty();
+ 				var newOption = $('<option value="'+$scope.camposbase.id+'" >'+$scope.camposbase.nombre+'</option>');
+        		$(this).append(newOption);
+        		$(this).trigger("chosen:updated");
+        		
+
+				$( this ).select($scope.camposbase.id);
+ 			});
+
+
+
 			$scope.campobase = '';
 			$scope.loading = false;
- 			
  			$scope.camposbase.nombre = '';
  			$scope.camposbase.descripcion = '';
  			$scope.camposbase.tipo = '';
@@ -45,20 +59,20 @@ app.controller('CamposBaseController', function($scope, $http) {
  			$scope.camposbase.ref_max='';
  			$('#myModal').modal('hide');
 
- 			$('#campos:select').each(function(index){
- 				 $( this ).empty();
- 				var newOption = $('<option value="1">locura total</option>');
-        		$(this).append(newOption);
-        		$(this).trigger("chosen:updated");
- 			});
+ 			
+				$http.post('/admin/estudios/camposbase/getAllCamposBase/').success(function(data, status, headers, config){
+		        			
+		        				campos = data;
+		        				//alert(data);
 
+		        				
+			    });
 
 		});
 	};
 
 
-	
- 
+
  
 	$scope.init();
  
