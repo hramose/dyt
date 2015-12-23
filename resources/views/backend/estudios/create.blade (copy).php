@@ -6,7 +6,7 @@
     
         <div class="well well bs-component">
 
-            <form class="form-horizontal" method="post">
+            <form class="form-horizontal" method="post" action="/admin/estudios/create">
 
                 @foreach ($errors->all() as $error)
                     <p class="alert alert-danger">{{ $error }}</p>
@@ -30,6 +30,7 @@
                             <input type="name" class="form-control" id="nombre" name="nombre">
                         </div>
                     </div>
+
                     <!-- Nombre -->
                     <!-- Observaciones -->
                     <div class="form-group">
@@ -45,22 +46,20 @@
                     <hr>
                     <div class="form-group" style="display:none;" id="campos">
 
-                        
-
                         <div class="col-lg-10">
                         <label for="select" class="col-lg-2 control-label">Campo</label>
                         <button type="button" class="elimina" onclick="$(this).parent().remove();">x</button>
-                            <select class="form-control" id="camposbase" name="campobase[]">
-                                @foreach($camposbase as $campobase)
-                                    <option value="{!! $campobase->id !!}"  >{!! $campobase->nombre !!} </option>
-                                @endforeach
-                            </select>
-                            <button type="button" class="agrega btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal" onclick="">+</button>
+                        <select class="form-control selectCampos" id="camposbase" name="campobase[]" ng-change="chequeaCampos()">
+                            @foreach($camposbase as $campobase)
+                                <option value="{!! $campobase->id !!}"  >{!! $campobase->nombre !!} </option>
+                            @endforeach
+                        </select>
+                        <button type="button" class="agrega btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal" onclick="">+</button>
                         </div>
-                    </div>
-                    <div id="cont">
+
                         
                     </div>
+                    <div id="cont"></div>
                     <div class="form-group">
                         <div class="col-lg-10 col-lg-offset-2">
                             <button type="reset" class="btn btn-default">Cancel</button>
@@ -69,6 +68,7 @@
                     </div>
                 </fieldset>
             </form>
+        </div>
         </div>
     
 
@@ -97,7 +97,7 @@
                     <div class="form-group">
                         <label for="nombre" class="col-lg-2 control-label">Nombre</label>
                         <div class="col-lg-10">
-                            <input type='text' ng-model="campobase.nombre">
+                            <input type='text' ng-model="camposbase.nombre">
                             
                         </div>
                     </div>
@@ -106,21 +106,27 @@
                         <label for="descripcion" class="col-lg-2 control-label">Descripción</label>
                         <div class="col-lg-10">
 
-                            <input type="descripcion" class="form-control"  ng-model="campobase.descripcion">
+                            <input type="descripcion" id="descripcion" class="form-control"  ng-model="camposbase.descripcion">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="tipo" class="col-lg-2 control-label">Tipo</label>
                         <div class="col-lg-10">
-                            <input type="tipo" class="form-control"  ng-model="campobase.tipo">
+                            <select class="form-control" id="tipo" ng-model="camposbase.tipo">
+                                    <option value="texto">Texto</option>
+                                    <option value="número entero">Número entero</option>
+                                    <option value="número con decimales">Número con decimales</option>
+                                    
+                            </select>
+                            
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="select" class="col-lg-2 control-label">Unidad de Medida</label>
+                        <label for="select" class="col-lg-2 control-label">U.Medida</label>
 
                         <div class="col-lg-10">
-                            <select class="form-control" ng-model="campobase.id_unidad">
+                            <select class="form-control" ng-model="camposbase.id_unidad">
                                 <option value="" id="vacio"></option>
                                 
                                 @foreach($unidadesMedida as $unidadMedida)
@@ -131,17 +137,17 @@
                             </select>
                         </div>
                     </div>
-                    <br><br>
+                   
                     <div class="form-group">
-                        <label for="ref_min" class="col-lg-2 control-label">Valor de Referencia Mínimo</label>
+                        <label for="ref_min" class="col-lg-2 control-label">Ref. Mín</label>
                         <div class="col-lg-10">
-                            <input type="ref_min" class="form-control" ng-model="campobase.ref_min">
+                            <input type="ref_min" id="ref_min" class="form-control" ng-model="camposbase.ref_min">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="ref_max" class="col-lg-2 control-label">Valor de Referencia Máximo</label>
+                        <label for="ref_max" class="col-lg-2 control-label">Ref. Máx</label>
                         <div class="col-lg-10">
-                            <input type="ref_max" class="form-control" ng-model="campobase.ref_max">
+                            <input type="ref_max" id="ref_max" class="form-control" ng-model="camposbase.ref_max">
                         </div>
                     </div>
                 </fieldset>
@@ -156,5 +162,5 @@
 </div><!-- /.modal -->
 
 
-    </div>
+    
 @endsection 

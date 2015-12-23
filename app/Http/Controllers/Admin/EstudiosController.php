@@ -45,6 +45,8 @@ class EstudiosController extends Controller
      */
     public function store(Request $request)
     {
+
+
         $estudio = new Estudio(array(
             'nombre' => $request->get('nombre'),
             'observaciones' => $request->get('observaciones')
@@ -52,7 +54,17 @@ class EstudiosController extends Controller
 
         $estudio->save();
         //$campos = $estudio->camposBase->lists('id')->toArray();
-        $estudio->saveCamposBase($request->get('campobase'));
+        
+        $campos=array();
+
+        $campos_base = $request->get('campobase');
+        /*foreach ($campos_base as $campo) {
+            if( !in_array($campo, $campos){
+                $campos[]=$campo;
+            }
+        }*/
+        //
+        $estudio->saveCamposBase($campos_base);
         
         //dump($campos);die;
         return redirect('/admin/estudios/create')->with('status', 'Un nuevo estudio ha sido creado.');

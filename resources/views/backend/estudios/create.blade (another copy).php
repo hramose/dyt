@@ -2,9 +2,6 @@
 @section('title', 'Crea un nuevo Estudio')
 
 @section('content')
-
-
-
 <div class="container col-md-8 col-md-offset-2" ng-app="CamposBaseApp" ng-controller="CamposBaseController">
     
         <div class="well well bs-component">
@@ -42,24 +39,27 @@
                             <input type="textarea" class="form-control" id="observaciones" name="observaciones">
                         </div>
                     </div>
+
                     
-                    <div class="form-group" style="border 1px solid #000;">
-                    <ul dnd-list="list">
-                        <!-- The dnd-draggable directive makes an element draggable and will
-                             transfer the object that was assigned to it. If an element was
-                             dragged away, you have to remove it from the original list
-                             yourself using the dnd-moved attribute -->
-                        <li ng-repeat="item in list" 
-                            dnd-draggable="item" 
-                            dnd-moved="list.splice($index, 1)" 
-                            dnd-effect-allowed="move" 
-                            dnd-selected="models.selected = item" 
-                            ng-class="{'selected': models.selected === item}" 
-                            >
-                            <% item.label %>
-                        </li>
-                    </ul>
+                    <!-- Observaciones -->
+                    <button type="button" id="tombo">+ campos</button>
+                    <hr>
+                    <div class="form-group" style="display:none;" id="campos">
+
+                        <div class="col-lg-10">
+                        <label for="select" class="col-lg-2 control-label">Campo</label>
+                        <button type="button" class="elimina" onclick="$(this).parent().remove();">x</button>
+                        <select class="form-control selectCampos" id="camposbase" name="campobase[]" >
+                            @foreach($camposbase as $campobase)
+                                <option value="{!! $campobase->id !!}"  >{!! $campobase->nombre !!} </option>
+                            @endforeach
+                        </select>
+                        <button type="button" class="agrega btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal" onclick="">+</button>
+                        </div>
+
+                        
                     </div>
+                    <div id="cont"></div>
                     <div class="form-group">
                         <div class="col-lg-10 col-lg-offset-2">
                             <button type="reset" class="btn btn-default">Cancel</button>

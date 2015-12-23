@@ -20,6 +20,12 @@ class Estudio extends Model
 
     public function saveCamposBase($campos_base)
     {
+
+
+
+
+
+
         if(!empty($campos_base))
         {
             $this->camposBase()->sync($campos_base);

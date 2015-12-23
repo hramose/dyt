@@ -2,14 +2,11 @@
 @section('title', 'Crea un nuevo Estudio')
 
 @section('content')
-
-
-
 <div class="container col-md-8 col-md-offset-2" ng-app="CamposBaseApp" ng-controller="CamposBaseController">
     
         <div class="well well bs-component">
 
-            <form class="form-horizontal" method="post" action="/admin/estudios/create">
+            <form class="form-horizontal" method="post">
 
                 @foreach ($errors->all() as $error)
                     <p class="alert alert-danger">{{ $error }}</p>
@@ -33,7 +30,6 @@
                             <input type="name" class="form-control" id="nombre" name="nombre">
                         </div>
                     </div>
-
                     <!-- Nombre -->
                     <!-- Observaciones -->
                     <div class="form-group">
@@ -42,23 +38,28 @@
                             <input type="textarea" class="form-control" id="observaciones" name="observaciones">
                         </div>
                     </div>
+
                     
-                    <div class="form-group" style="border 1px solid #000;">
-                    <ul dnd-list="list">
-                        <!-- The dnd-draggable directive makes an element draggable and will
-                             transfer the object that was assigned to it. If an element was
-                             dragged away, you have to remove it from the original list
-                             yourself using the dnd-moved attribute -->
-                        <li ng-repeat="item in list" 
-                            dnd-draggable="item" 
-                            dnd-moved="list.splice($index, 1)" 
-                            dnd-effect-allowed="move" 
-                            dnd-selected="models.selected = item" 
-                            ng-class="{'selected': models.selected === item}" 
-                            >
-                            <% item.label %>
-                        </li>
-                    </ul>
+                    <!-- Observaciones -->
+                    <button type="button" id="tombo">+ campos</button>
+                    <hr>
+                    <div class="form-group" style="display:none;" id="campos">
+
+                        
+
+                        <div class="col-lg-10">
+                        <label for="select" class="col-lg-2 control-label">Campo</label>
+                        <button type="button" class="elimina" onclick="$(this).parent().remove();">x</button>
+                            <select class="form-control" id="camposbase" name="campobase[]">
+                                @foreach($camposbase as $campobase)
+                                    <option value="{!! $campobase->id !!}"  >{!! $campobase->nombre !!} </option>
+                                @endforeach
+                            </select>
+                            <button type="button" class="agrega btn btn-primary btn-xs" data-toggle="modal" data-target="#myModal" onclick="">+</button>
+                        </div>
+                    </div>
+                    <div id="cont">
+                        
                     </div>
                     <div class="form-group">
                         <div class="col-lg-10 col-lg-offset-2">
@@ -68,7 +69,6 @@
                     </div>
                 </fieldset>
             </form>
-        </div>
         </div>
     
 
@@ -97,7 +97,7 @@
                     <div class="form-group">
                         <label for="nombre" class="col-lg-2 control-label">Nombre</label>
                         <div class="col-lg-10">
-                            <input type='text' ng-model="camposbase.nombre">
+                            <input type='text' ng-model="campobase.nombre">
                             
                         </div>
                     </div>
@@ -106,27 +106,21 @@
                         <label for="descripcion" class="col-lg-2 control-label">Descripción</label>
                         <div class="col-lg-10">
 
-                            <input type="descripcion" id="descripcion" class="form-control"  ng-model="camposbase.descripcion">
+                            <input type="descripcion" class="form-control"  ng-model="campobase.descripcion">
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label for="tipo" class="col-lg-2 control-label">Tipo</label>
                         <div class="col-lg-10">
-                            <select class="form-control" id="tipo" ng-model="camposbase.tipo">
-                                    <option value="texto">Texto</option>
-                                    <option value="número entero">Número entero</option>
-                                    <option value="número con decimales">Número con decimales</option>
-                                    
-                            </select>
-                            
+                            <input type="tipo" class="form-control"  ng-model="campobase.tipo">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="select" class="col-lg-2 control-label">U.Medida</label>
+                        <label for="select" class="col-lg-2 control-label">Unidad de Medida</label>
 
                         <div class="col-lg-10">
-                            <select class="form-control" ng-model="camposbase.id_unidad" ng-change="chequeaCampos()">
+                            <select class="form-control" ng-model="campobase.id_unidad">
                                 <option value="" id="vacio"></option>
                                 
                                 @foreach($unidadesMedida as $unidadMedida)
@@ -137,17 +131,17 @@
                             </select>
                         </div>
                     </div>
-                   
+                    <br><br>
                     <div class="form-group">
-                        <label for="ref_min" class="col-lg-2 control-label">Ref. Mín</label>
+                        <label for="ref_min" class="col-lg-2 control-label">Valor de Referencia Mínimo</label>
                         <div class="col-lg-10">
-                            <input type="ref_min" id="ref_min" class="form-control" ng-model="camposbase.ref_min">
+                            <input type="ref_min" class="form-control" ng-model="campobase.ref_min">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="ref_max" class="col-lg-2 control-label">Ref. Máx</label>
+                        <label for="ref_max" class="col-lg-2 control-label">Valor de Referencia Máximo</label>
                         <div class="col-lg-10">
-                            <input type="ref_max" id="ref_max" class="form-control" ng-model="camposbase.ref_max">
+                            <input type="ref_max" class="form-control" ng-model="campobase.ref_max">
                         </div>
                     </div>
                 </fieldset>
@@ -161,5 +155,6 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-    
+
+    </div>
 @endsection 
